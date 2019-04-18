@@ -1,0 +1,13 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "noImplicitAny": true
+  },
+  "include": [
+    "*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

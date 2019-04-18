@@ -1,0 +1,75 @@
+{
+  "network": {
+    "orderer": {
+      "url": "grpcs://localhost:7050",
+      "name": "orderer",
+      "mspid": "OrdererMSP",
+      "msp": "crypto-config/ordererOrganizations/example.com/msp/",
+      "server-hostname": "orderer.example.com",
+      "tls_cacerts": "crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/tls/ca.crt",
+      "user": {
+        "admin": {
+          "tls_cacerts": "crypto-config/ordererOrganizations/example.com/users/Admin@example.com/tls/client.crt",
+          "tls_key": "crypto-config/ordererOrganizations/example.com/users/Admin@example.com/tls/client.key",
+          "msp_signcerts": "crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/signcerts/Admin@example.com-cert.pem",
+          "msp_keystore": "crypto-config/ordererOrganizations/example.com/users/Admin@example.com/msp/keystore/"
+        }
+      }
+    },
+    "org1": {
+      "name": "peerOrg1",
+      "mspid": "Org1MSP",
+      "msp": "crypto-config/peerOrganizations/org1.example.com/msp/",
+      "ca": {
+        "url": "https://localhost:7054",
+        "name": "ca-org1"
+      },
+      "peer1": {
+        "requests": "grpcs://localhost:7051",
+        "server-hostname": "peer0.org1.example.com",
+        "tls_cacerts": "crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls/ca.crt"
+      },
+      "peer2": {
+        "requests": "grpcs://localhost:8051",
+        "server-hostname": "peer1.org1.example.com",
+        "tls_cacerts": "crypto-config/peerOrganizations/org1.example.com/peers/peer1.org1.example.com/tls/ca.crt"
+      },
+      "user": {
+        "admin": {
+          "tls_cacerts": "crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/tls/client.crt",
+          "tls_key": "crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/tls/client.key",
+          "msp_signcerts": "crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/signcerts/Admin@org1.example.com-cert.pem",
+          "msp_keystore": "crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp/keystore/"
+        }
+      }
+    },
+    "org2": {
+      "name": "peerOrg2",
+      "mspid": "Org2MSP",
+      "msp": "crypto-config/peerOrganizations/org2.example.com/msp/",
+      "ca": {
+        "url": "https://localhost:8054",
+        "name": "ca-org2"
+      },
+      "peer1": {
+        "requests": "grpcs://localhost:9051",
+        "server-hostname": "peer0.org2.example.com",
+        "tls_cacerts": "crypto-config/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls/ca.crt"
+      },
+      "peer2": {
+        "requests": "grpcs://localhost:10051",
+        "server-hostname": "peer1.org2.example.com",
+        "tls_cacerts": "crypto-config/peerOrganizations/org2.example.com/peers/peer1.org2.example.com/tls/ca.crt"
+      },
+      "user": {
+        "admin": {
+          "tls_cacerts": "crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/tls/client.crt",
+          "tls_key": "crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/tls/client.key",
+          "msp_signcerts": "crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/signcerts/Admin@org2.example.com-cert.pem",
+          "msp_keystore": "crypto-config/peerOrganizations/org2.example.com/users/Admin@org2.example.com/msp/keystore/"
+        }
+      }
+    }
+  },
+  "haha-haha": {}
+}

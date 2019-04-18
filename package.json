@@ -1,0 +1,21 @@
+{
+  "name": "fabric-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "author": "yakumioto <yaku.mioto@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fabric-ca-client": "^1.4.1",
+    "fabric-client": "^1.4.1",
+    "tslint": "^5.16.0",
+    "typescript": "^3.4.3",
+    "webpack": "^4.30.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  }
+}
