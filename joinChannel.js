@@ -83,8 +83,19 @@ function joinChannel() {
                         })];
                 case 3:
                     block = _a.sent();
-                    console.log(block.data.data[0].payload);
-                    return [2 /*return*/, null];
+                    // Org1 加入 channel
+                    signedCretPEMPath = path.join(__dirname, config.org1.user.admin.msp_signcerts);
+                    keyName = fs.readdirSync(path.join(__dirname, config.org1.user.admin.msp_keystore), { encoding: "utf8" })[0];
+                    privateKeyPEMPath = path.join(__dirname, config.org1.user.admin.msp_keystore, keyName);
+                    return [4 /*yield*/, client.createUser({
+                            username: config.org1.name,
+                            mspid: config.org1.mspid,
+                            cryptoContent: {
+                                signedCertPEM: fs.readFileSync(signedCretPEMPath, { encoding: "utf8" }),
+                                privateKeyPEM: fs.readFileSync(privateKeyPEMPath, { encoding: "utf8" })
+                            },
+                            skipPersistence: false
+                        })];
                 case 4:
                     _a.sent();
                     targets = [
